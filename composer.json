@@ -1,0 +1,12 @@
+{
+    "name": "rakibtg/large-db",
+    "authors": [
+        {
+            "name": "rakibtg",
+            "email": "rakibtg@gmail.com"
+        }
+    ],
+    "require": {
+        "fzaninotto/faker": "^1.9"
+    }
+}
