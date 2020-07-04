@@ -10,12 +10,18 @@
     protected $totalBytesWritten;
 
     function __construct ($file, $fileSize, $fileSizeUnit) {
-      $this->file = $file;
+      $this->bootFile($file);
       $this->faker = Faker\Factory::create();
       $this->expectedFileSize = $fileSize;
       $this->expectedFileSizeUnit = $fileSizeUnit;
       $this->totalBytesWritten = 0;
       $this->totalLinesWritten = 0;
+    }
+    function bootFile ($file) {
+      $this->file = $file;
+      if (!file_exists($this->file)) {
+        file_put_contents($this->file, '');
+      }
     }
     function row () {
       $row = [
